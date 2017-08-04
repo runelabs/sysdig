@@ -56,7 +56,7 @@ struct event_filler_arguments {
 	u32 arg_data_offset;
 	u32 arg_data_size;
 	enum ppm_event_type event_type;	/* the event type */
-	/* Eventually convert this to an event_info union and move all the 
+	/* Eventually convert this to an event_info union and move all the
 	 * below per-event params in this union, it's not good to waste kernel
 	 * stack since all this stuff is always exclusive
 	 */
