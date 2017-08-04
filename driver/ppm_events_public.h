@@ -507,6 +507,7 @@ enum ppm_capture_category {
 	PPMC_SYSCALL = 1,
 	PPMC_CONTEXT_SWITCH = 2,
 	PPMC_SIGNAL = 3,
+	PPMC_PAGE_FAULT = 4,
 };
 
 /** @defgroup etypes Event Types
@@ -800,7 +801,11 @@ enum ppm_event_type {
 	PPME_SYSCALL_EXECVE_17_X = 283,
 	PPME_SYSCALL_UNSHARE_E = 284,
 	PPME_SYSCALL_UNSHARE_X = 285,
-	PPM_EVENT_MAX = 286
+	PPME_PAGE_FAULT_USER_E = 286,
+	PPME_PAGE_FAULT_USER_X = 287,
+	PPME_PAGE_FAULT_KERNEL_E = 288,
+	PPME_PAGE_FAULT_KERNEL_X = 289,
+	PPM_EVENT_MAX = 290
 };
 /*@}*/
 
@@ -1300,6 +1305,7 @@ struct ppm_evt_hdr {
 #define PPM_IOCTL_ENABLE_SIGNAL_DELIVER _IO(PPM_IOCTL_MAGIC, 15)
 #define PPM_IOCTL_GET_PROCLIST _IO(PPM_IOCTL_MAGIC, 16)
 #define PPM_IOCTL_SET_TRACERS_CAPTURE _IO(PPM_IOCTL_MAGIC, 17)
+#define PPM_IOCTL_ENABLE_PAGE_FAULTS _IO(PPM_IOCTL_MAGIC, 18)
 
 
 extern const struct ppm_name_value socket_families[];
