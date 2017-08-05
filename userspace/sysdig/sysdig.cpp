@@ -765,6 +765,7 @@ sysdig_init_res sysdig_init(int argc, char **argv)
 		{"list-markdown", no_argument, 0, 0 },
 		{"mesos-api", required_argument, 0, 'm'},
 		{"numevents", required_argument, 0, 'n' },
+		{"page-faults", no_argument, 0, 0 },
 		{"progress", required_argument, 0, 'P' },
 		{"print", required_argument, 0, 'p' },
 		{"quiet", no_argument, 0, 'q' },
@@ -782,7 +783,6 @@ sysdig_init_res sysdig_init(int argc, char **argv)
 		{"print-hex", no_argument, 0, 'x'},
 		{"print-hex-ascii", no_argument, 0, 'X'},
 		{"compress", no_argument, 0, 'z' },
-		{"page-faults", no_argument, 0, 0 },
 		{0, 0, 0, 0}
 	};
 

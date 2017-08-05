@@ -1505,6 +1505,7 @@ static int record_event_consumer(struct ppm_consumer_t *consumer,
 		 * page_fault_kernel. The alternative would be to disable the kernel
 		 * tracepoint completely, but there is value in seeing page faults
 		 * generated on this side, so let's see if someone complains.
+		 * This means that effectively those events would be lost.
 		 */
 		if (event_type != PPME_PAGE_FAULT_KERNEL_E) {
 			ring_info->n_preemptions++;
@@ -1649,7 +1650,6 @@ static int record_event_consumer(struct ppm_consumer_t *consumer,
 
 		if (event_datap->category == PPMC_PAGE_FAULT)
 			args.fault_data = event_datap->event_info.fault_data;
-
 
 		args.curarg = 0;
 		args.arg_data_size = args.buffer_size - args.arg_data_offset;
